@@ -1,0 +1,254 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} My Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h4 class="m-b-10">Welcome to College Guidance Pro - ML Powered!</h4>
+                                        <p>Find your chance of admission using LinearRegression, DecisionTreeRegressor or RandomForestRegressor Prediction Models</p>
+                                    </div>
+                                    <!-- <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">Form Componants</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">Form Elements</a></li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <!-- <div class="card-header">
+                                        </div> -->
+                                        <div class="card-body">
+                                            <!-- <h5>Please enter your information</h5>
+                                            <hr> -->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                        <h5>Please select your interested University</h5>
+                                                        <div class="form-group">
+                                                            <hr>
+                                                            <select class="form-control" multiple value="" name="univSelect" id="univSelect" placeholder="Pick a University...">
+                                                                {% for k in colleges %} 
+                                                                    <option value="{{k}}">{{k}}</option>
+                                                                {% endfor %}
+                                                            </select>      
+                                                        </div>
+
+                                                        <h5>Select your area of Interest</h5>
+                                                        <div class="form-group">
+                                                            <hr>
+                                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                                <option>Engineering</option>
+                                                                <option>Medical</option>
+                                                                <option>Sports</option>
+                                                                <option>Arts</option>
+                                                                <option>Scholarship</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- <select class="mb-3 form-control">
+                                                            <option>Default select</option>
+                                                        </select> -->
+                                                        <h5 class="mt-5">Standardized Testing</h5>
+                                                        <div class="form-group">
+                                                            <label for="satScore">SAT score</label>
+                                                            <input type="range" class="custom-range" min="0" max="1600" step="10" value="0" id="satScore" name="satScore" oninput="satOutput.value = this.value"">
+                                                            <output id="satOutput" name= "satOutput" style="font-size: x-large;color: darkblue;">0</output>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="actScore">ACT score</label>
+                                                            <input type="range" class="custom-range" min="0" max="36" step="0" value="0" id="actScore" name="actScore" oninput="actOutput.value = this.value"">
+                                                            <output id="actOutput" name= "actOutput"  style="font-size: x-large;color: darkblue;">0</output>
+                                                        </div>
+
+                                                        <h5 class="mt-5">High School Information</h5>
+                                                        <div class="form-group">
+                                                            <label for="gpa">GPA</label>
+                                                            <input type="text" class="form-control" id="gpa" name="gpa" value="3.0" aria-describedby="fullNameHelp" placeholder="Enter your GPA">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="numAPCourses">Number of AP Courses taken</label>
+                                                            <input type="text" class="form-control" id="numAPCourses" value="0" name="numAPCourses" aria-describedby="fullNameHelp" placeholder="AP Courses with score greater than or equal to 3">
+                                                        </div>
+
+                                                        <h5 class="mt-5">Did you participate in any sports or Extracurricular activities at State or National Level</h5>
+                                                        <hr>
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input type="radio" id="radioSportExtraYes" name="radioSportExtra" class="custom-control-input">
+                                                            <label class="custom-control-label" for="radioSportExtraYes">Yes</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input type="radio" checked id="radioSportExtraNo" name="radioSportExtra" class="custom-control-input">
+                                                            <label class="custom-control-label" for="radioSportExtraNo">No</label>
+                                                        </div>        
+                                                        <div class="form-group">
+                                                            <h5 class="mt-5">Do you need Financial Assistance</h5>
+                                                            <hr>
+                                                            <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" id="radioFinAsstYes" name="radioFinAsst" class="custom-control-input">
+                                                                <label class="custom-control-label" for="radioFinAsstYes">Yes</label>
+                                                            </div>
+                                                            <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" checked id="radioFinAsstNo" name="radioFinAsst" class="custom-control-input">
+                                                                <label class="custom-control-label" for="radioFinAsstNo">No</label>
+                                                            </div>        
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <h5 class="mt-5">Please select your Gender</h5>
+                                                            <hr>
+                                                            <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" checked id="radioMale" name="radioMaleFemale" class="custom-control-input">
+                                                                <label class="custom-control-label" for="radioMale">Male</label>
+                                                            </div>
+                                                            <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" id="radioFemale" name="radioMaleFemale" class="custom-control-input">
+                                                                <label class="custom-control-label" for="radioFemale">Female</label>
+                                                            </div>        
+                                                        </div>
+                                                        <br />
+                                                        <h5>Select your Race</h5>
+                                                        <div class="form-group">
+                                                            <hr>
+                                                            <select class="form-control" id="race">
+                                                                <option>African-American</option>
+                                                                <option>White</option>
+                                                                <option>Latino</option>
+                                                                <option>Asian</option>
+                                                                <option>Other</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <h5>Advanced Option - Pick the Predictive Model</h5>
+                                                        <div class="form-group">
+                                                            <hr>
+                                                            <select class="form-control" id="predictiveModel">
+                                                                <option>LinearRegression</option>
+                                                                <option>DecisionTreeRegressor</option>
+                                                                <option>RandomForestRegressor</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <input type="submit" class="btn btn-primary" name="getAdmissionChances" value="Get Admission Chances" onclick="calculate_COA();">
+                                                    <br><br>
+                                                    <h5 id="fetchingResult" style="display: none;">Fetching result...........</h5>
+
+                                                    <div id="coa-results" style="display: none;">
+                                                        <div class="card-header">
+                                                            <h5 id="selectedUniversity"></h5>
+                                                        </div>
+                                                        <div class="card-block">
+                                                            <h6 id="coa" style="color: darkgreen; font-size: x-large;"></h6>
+                                                        </div> 
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+    <!-- [ Main Content ] end -->            
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script type="text/javascript">
+    function add_number(){
+        var first_number = parseInt(document.getElementById("verbalOutput").value);
+        var second_number = parseInt(document.getElementById("quantOutput").value);
+        var result = first_number + second_number;
+        document.getElementById("exampleSatActScore1").value = result;    
+    }
+    function calculate_COA() {
+        var resultsContainer = document.getElementById("coa-results");
+        resultsContainer.style.display = "none";
+        var fetchContainer = document.getElementById("fetchingResult");
+        fetchContainer.style.display = "block";
+        var univSelect = document.getElementById("univSelect").value;
+        var satScore = document.getElementById("satScore").value;
+        var actScore = document.getElementById("actScore").value;
+        var gpa = document.getElementById("gpa").value;
+        var numAPCourses = document.getElementById("numAPCourses").value;
+        var sportExtra = 0
+        if(document.getElementById("radioSportExtraYes").checked)
+            sportExtra = 1;
+        var finAsstNeeded = 0;
+        if(document.getElementById("radioFinAsstYes").checked)
+            finAsstNeeded = 1;
+        var sex = "Male";
+        if(document.getElementById("radioFemale").checked)
+            sex = "Female";
+        var race = document.getElementById("race").value;
+        var predictiveModel = document.getElementById("predictiveModel").value;
+
+
+        var coa = document.getElementById("coa");
+        var selectedUniversity = document.getElementById("selectedUniversity");
+        
+        var server_data = [
+            {"univSelect": univSelect},
+            {"satScore": satScore},
+            {"actScore": actScore},
+            {"gpa": gpa},
+            {"numAPCourses": numAPCourses},
+            {"sportExtra": sportExtra},
+            {"finAsstNeeded": finAsstNeeded},
+            {"sex": sex},
+            {"race": race},
+            {"predictiveModel": predictiveModel},
+        ];
+        $.ajax({
+        type: "POST",
+        url: "/process_coa",
+        data: JSON.stringify(server_data),
+        contentType: "application/json",
+        dataType: 'json',
+        success: function(result) {
+            fetchContainer.style.display = "none";
+            resultsContainer.style.display = "block";
+            coa.innerHTML = result.coa + "%" ; 
+            selectedUniversity.innerHTML = "Admission Chances for " + result.selectedUniversity
+        } 
+        });
+    }
+
+    $(document).ready(function () {
+      $('#univSelect').selectize({
+          sortField: 'text',
+          maxItems: 1
+      });
+    });
+
+</script>
+{% endblock javascripts %}
