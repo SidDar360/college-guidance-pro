@@ -16,6 +16,7 @@ RUN pip install pandas
 RUN pip install matplotlib
 RUN pip install seaborn
 RUN pip install -U scikit-learn scipy matplotlib
+RUN pip install sklearn_pandas
 
 COPY env.sample .env
 
